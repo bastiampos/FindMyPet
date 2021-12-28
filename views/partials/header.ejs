@@ -1,0 +1,34 @@
+<header>
+    <h1>FindMyPet</h1>
+    <nav>
+        <a class="<%= !title.includes('|') ? 'active' : null %>" href="/">Home</a>
+        <% if(loggedIn) { %>
+            <a class="<%= title.includes('Profile') ? 'active' : null %>" href="/profile">Profile</a>
+            <a href="/user/signout">Sign Out</a>
+        <% } else { %>
+            <a class="<%= title.includes('Register') ? 'active' : null %>">Account</a>
+        <% } %>
+    </nav>
+    <% if(!loggedIn) { %>
+        <div class="hover-account">
+            <h6>Sign In</h6>
+            <form action="/user/signin" method="POST">
+                <div>
+                    <label for="Username">Username</label>
+                    <input type="text" name="Username" id="Username" placeholder="Write your username"/>
+                </div>
+                <div>
+                    <label for="Password">Password</label>
+                    <input type="password" name="Password" id="Password" placeholder="Write your password"/>
+                </div>
+                <input class="submit-signin" type="submit" value="Sign In"/>
+            </form>
+            <div class="line"></div>
+            <div class="create-account">
+                <p>Create an account</p>
+                <a href="/signup">Sing Up</a>
+            </div>
+        </div>
+    <% } %>
+
+</header>

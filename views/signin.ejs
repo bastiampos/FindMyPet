@@ -1,0 +1,29 @@
+<%- include('partials/head.ejs')  %>
+<%- include('partials/header.ejs')  %>
+    <main class="register-main">
+        <section class="bg-sign"
+            style="background-image: url('https://cdn.dribbble.com/users/3960463/screenshots/16357000/media/582d64fc9ae5ac94cf1aeceb7de0537a.jpg?compress=1&resize=1200x900'); width: 50%; background-size: cover;">
+            <div class="create-account">
+                <p>Do you want to create an account?</p>
+                <a href="/signup">Sing Up</a>
+            </div>
+        </section>
+        <section class="register">
+            <h2>Sign In</h2>
+            <p>Fill your data</p>
+                <form action="/signin" method="POST" style="display: flex; flex-direction: column;">
+                    <div>
+                        <label for="Username">Username</label>
+                        <input type="text" name="Username" id="Username" placeholder="Write your username"/>
+                    </div>
+                    <div>
+                        <label for="Password">Password</label>
+                        <input type="password" name="Password" id="Password" placeholder="Write your password"/>
+                    </div>
+                    <input class="submit-signin" type="submit" value="Sign In"/>
+                </form>
+            
+        </section>
+
+
+<%- include('partials/footer.ejs')  %>

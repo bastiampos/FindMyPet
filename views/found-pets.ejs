@@ -1,0 +1,31 @@
+<%- include('partials/head.ejs')  %>
+<%- include('partials/header.ejs')  %>
+    <main> 
+        <div class="filters">
+            <a href="/">Searched pets</a>
+            <a class="disabled">Found pets</a>
+            <input type="search" name="search" placeholder="Search some pets..."/>
+        </div>
+        <section class="cards">
+            <% posts.forEach( post => { %>
+                    <div class="card-container">
+                        <div class="pic-post" style="background-image: url('<%= post.picture %>');">
+                            <span><%= post.status %></span>
+                            <div>
+                                <p><%= post.title%></p>
+                                <p style="font-size: 2vmin; font-weight: 400; margin-bottom: 1vmin;">@<%= post.owner%></p>
+                            </div>
+                        </div>
+                        <div class="info-post">
+                            <div class="buttons-info-post">
+                                <p><%= post.date %></p>
+                                <p><%= post.location %></p>
+                            </div>
+                            <p style="margin-top: 2vmin;"><%= post.features %></p>
+                            <p><b>Contact me in:</b> <%= post.number%></p>
+                        </div>
+                    </div>
+            <% }) %>
+        </section>
+
+<%- include('partials/footer.ejs')  %>

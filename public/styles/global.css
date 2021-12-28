@@ -1,0 +1,537 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    text-decoration: none;
+}
+
+header, header nav, footer, footer nav, .filters {
+    display: flex;
+    align-items: center;
+}
+
+/* HEADER */
+
+header {
+    height: 10vh;
+    width: 100%;
+    padding: 3vh 9%;
+    justify-content: space-between;
+    box-shadow: 5px 0 10px #616161;
+    position: relative;
+}
+
+.hover-account {
+    position: absolute;
+    top: 100%;
+    right: 4%;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid orange;
+    padding: 3vmin 2vmin;
+    z-index: 100;
+}
+.hover-account h6 {
+    font-size: 3vmin;
+    color: orangered;
+}
+
+.hover-account form div {
+    display: flex;
+    flex-direction: column;
+    margin: 2vmin 0;
+}
+
+.hover-account form div label {
+    color: orangered;
+}
+
+.submit-signin {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    font-size: 3vmin;
+    height: 6vh;
+    color: white;
+    font-weight: bold;
+    background-color: orange;
+}
+
+.hover-account form div input {
+    margin-top: 1vmin;
+    height: 6vh;
+    padding-left: 1vmin;
+    outline: none;
+    background-color: #f0f0f0;
+    border: 1px solid orange;
+    border-radius: 5px;
+}
+
+
+.hover-account .line {
+    width: 100%;
+    border-bottom: 1px solid orange;
+    margin: 2vmin 0;
+}
+
+.create-account {
+    display: flex;
+    margin: 1vmin 0;
+    justify-content: space-evenly;
+}
+
+.create-account a {
+    color: orangered;
+}
+
+header nav a, footer nav a {
+    color: black;
+    padding: 1vmin 2vmin;
+}
+
+header nav a:hover {
+    font-weight: bold;
+}
+
+header.active {
+    background-color: rgb(255, 0, 0);
+    border: none;
+    border-radius: 10px;
+}
+
+/* FOOTER */
+
+footer {
+    width: 100%;
+    height: 10vh;
+    padding: 3vh 9%;
+    justify-content: space-between;
+}
+
+
+footer nav a:hover {
+    text-decoration: underline;
+}
+
+
+main {
+    background: #f0f0f0;
+    min-height: 80vh;
+}
+
+
+/* home */
+
+.filters {
+    background-image: url('https://cdn.dribbble.com/users/1731254/screenshots/15546216/media/52d7eab533a19f3336c0e975c76e537c.png?compress=1&resize=1200x900');
+    padding: 5vmin 9%;
+    /* background-size: cover; */
+    background-position-y: 16%;
+    background-position-x: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    flex-wrap: wrap;
+    gap: 3vmin;
+    border-top: 2px solid #ffc750;
+    border-bottom: 2px solid #ffc750;
+}
+
+.filters input, .filters a {
+    background-color: white;
+    height: 6vh;
+    border-radius: 5px;
+    border: 2px solid orange;
+}
+
+.filters a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: orange;
+    font-weight: bold;
+}
+
+.filters input {
+    padding-left: 3vmin;
+    padding-right: 2vmin;
+    outline: none;
+}
+
+.filters button {
+    color: orange;
+    font-weight: bold;
+    font-size: 2.5vmin;
+    cursor: pointer;
+}
+
+.cards {
+    padding: 5vh 9%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    flex-wrap: wrap;
+    gap: 3vmin;
+    border-bottom: 2px solid #ffc750;
+}
+
+.card-container {
+    cursor: pointer;
+}
+
+.card-container:hover {
+    box-shadow: 1px 1px 10px #acacac;
+    border-radius: 5px;
+}
+
+.ad-pic {
+    /* padding: 2%; */
+    border: none;
+    border-radius: 5px 5px 0 0;
+    background-size: cover;
+    background-position: center;
+    height: 35vh;
+}
+
+.title-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.status-card {
+    padding: 0.5vmin 2vmin;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 2px solid rgba(248,81,73);
+    border-radius: 5px;
+    background-color: rgba(248,81,73, 0.9);
+}
+
+.details-card {
+    width: 100%;
+    background: white;
+    border: 1px solid #ffc750;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    padding: 1vmin;
+}
+
+.name-card {
+    font-weight: bold;
+    font-size: 3vmin;
+    color: orangered;
+} 
+
+.date-location-card {
+    display: flex;
+    justify-content: space-between;
+    color: #5a5a5a;
+}
+
+/* SIGN UP  */
+
+.register-main {
+    width: 100%;
+    display: flex;
+}
+
+.register {
+    background-color: rgb(255, 232, 210);
+    width: 50%;
+    padding: 5vh 5vh;
+}
+
+.register h2 {
+    font-size: 4vmin;
+    color: orangered;
+}
+
+.register p, .register label {
+    color: rgb(255, 86, 24);
+}
+
+.register form {
+    margin-top: 3vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5vmin;
+}
+
+.register form div {
+    display: flex;
+    flex-direction: column;
+}
+
+.register form div label {
+    padding: 1vmin;
+}
+
+.register form div input {
+    padding-left: 2vmin;
+    height: 6vh;
+    outline: none;
+    border: 1px solid orange;
+    border-radius: 5px;
+}
+
+.register select {
+    padding-left: 2vmin;
+    height: 6vh;
+    outline: none;
+    border: 1px solid orange;
+    border-radius: 5px;
+}
+
+.register form button {
+    width: 50%;
+    height: 6vh;
+    color: white;
+    font-weight: bold;
+    background-color: orange;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 2.8vmin;
+}
+
+.register form button:hover {
+    box-shadow: 1px 1px 5px orange;
+}
+
+/* profile */
+
+.cover-profile, .pic-profile {
+    background-size: cover;
+}
+
+.cover-profile {
+    border-bottom: 5px solid orangered;
+    border-top: 2px solid #ffc750;
+    height: 40vh;
+    width: 100%;
+    background-position-y: 5%;
+    position: relative;
+    padding-left: 35%;
+}
+
+.user-name {
+    padding-left: 27%;
+}
+
+.user-name h5 {
+    font-size: 6vmin;
+}
+
+.status-profile {
+    position: absolute;
+    top: 5%;
+    right: 1%;
+    padding: 1vmin 5vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(201, 11, 11, 0.9);
+    border-radius: 5px;
+    border: rgb(255, 0, 0), 0.5;
+    font-size: 3vmin;
+    font-weight: bold;
+    color: white;
+}
+
+.pic-profile {
+    border: 5px solid orangered;
+    height: 20vw;
+    width: 20vw;
+    border-radius: 50%;
+    background-position: center;
+    position: absolute;
+    top: 40%;
+    left: 10%;
+}
+
+section.profile {
+    padding: 5vh 9%;
+}
+
+.my-profile {
+    padding: 5vh 0;
+}
+
+.my-profile h2 {
+    margin: 3vmin 0;
+}
+
+.pets-profile {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3vmin;
+}
+
+.newpet-card {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #ffc750;
+    padding: 1vmin;
+}
+
+.ad-pic.newpet {
+    height: 100%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.description-ad {
+    grid-column: span 2;
+}
+
+.new-post-form div{
+    height: 15vh;
+    font-size: 4vmin;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    margin: 2vmin 0;
+    width: 100%;
+    background: url('https://cdn.dribbble.com/users/1731254/screenshots/11980894/media/ff3b16ccc54281789a4a56e22e9e64bc.png?compress=1&resize=1200x900');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.new-post-form div::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    background-color: rgba(0, 0 ,0, 0.5);
+    z-index: 1;
+}
+
+.new-post-form div h2 {
+    z-index: 2;
+}
+
+.posts-profile {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3vmin;
+}
+
+.post-container {
+    width: 100%;
+    background-color: teal;
+    border-radius: 5px;
+}
+
+.post-container:hover {    
+    box-shadow: 1px 1px 5px rgba(255, 166, 0, 0.541);
+}
+
+.pic-post {
+    height: 25vw;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    border-radius: 5px 5px 0 0;
+    position: relative;
+}
+
+.pic-post span {
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    padding: 1vmin 5vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(201, 11, 11, 0.9);
+    border-radius: 5px;
+    border: rgb(255, 0, 0), 0.5;
+    font-size: 2.5vmin;
+    font-weight: bold;
+    color: white;
+}
+
+
+.createpet {
+    min-height: 30vh;
+}
+
+.pic-post p {
+    font-weight: bold;
+    color: white;
+    padding: 0 2vmin;
+    font-size: 5vmin;
+}
+
+.info-post {
+    background-color: white;
+    border-radius: 0 0 5px 5px;
+    border: 1px solid #ffc750;
+    padding: 0 1vmin;
+    height: 15vh;
+}
+
+.info-post span {
+    font-weight: bold;
+    font-size: 3vmin;
+}
+
+.buttons-info-post {
+    margin-top: 1vmin;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons-info-post p {
+    color: gray;
+}
+
+.breed-post {
+    color: tomato;
+    border: 1px solid tomato;
+    background: rgb(255, 184, 172, 0.7);
+}
+
+.date-post {
+    color: teal;
+    border: 1px solid teal;
+    background-color: rgb(72, 194, 194, 0.7);
+}
+
+.place-post {
+    color: yellowgreen;
+    border: 1px solid yellowgreen;
+    background-color: rgb(210, 252, 127, 0.7);
+}
+
+.disabled {
+    background-color: gray;
+    border: 1px solid gray;
+    color: white;
+}
+
+.icon-post {
+    width: 3vmin;
+    fill: white;
+    cursor: pointer;
+}

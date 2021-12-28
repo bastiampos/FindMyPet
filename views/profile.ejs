@@ -1,0 +1,108 @@
+<%- include('partials/head.ejs')  %>
+<%- include('partials/header.ejs')  %>
+<main>  
+    <div class="cover-profile" style="background-image: url('https://cdn.dribbble.com/users/1731254/screenshots/14999271/media/7e3292dc1363aeaee235880f282dfd38.png?compress=1&resize=1200x900');">
+        <div class="pic-profile" style="background-image: url('<%= picture %>');">
+        </div>
+        <% if(status) { %>
+            <p class="status-profile"><%= status %></p>
+        <% } %>
+    </div>
+    <section class="profile">
+        <div class="user-name">
+            <h5><%= firstname %> <%= lastname %></h5>
+            <p>@<%= username %></p>
+        </div>
+        <div class="options">
+
+        </div>
+        <div class="my-profile">
+            <h2>My Pets</h2>
+            <section class="pets-profile">
+                <a href="/form-pet" class="card-container createpet">
+                    <div class="ad-pic newpet" style="background-image: url('https://cdn.dribbble.com/users/1731254/screenshots/15546216/media/52d7eab533a19f3336c0e975c76e537c.png?compress=1&resize=1200x900');">
+                        <div class="newpet-card">
+                            <p class="name-card">Add your pets</p>
+                            <p>Click here</p>
+                        </div>
+                    </div>
+                </a>
+                <% pets.forEach( pet => { %>
+                    <div class="card-container">
+                        <div class="ad-pic" style="background-image: url('<%= pet.picture %>');">
+                            <% if(pet.status) { %>
+                                <p class="status-card"><%= pet.status %></p>
+                            <% } %>
+                            <div style="padding: 1vmin; display: flex; flex-direction: column">
+                                <a >
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="icon-post" viewBox="0 0 16 16">
+                                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                      </svg>
+                                </a>
+                                <a href="/delete-pet/<%= pet._id %>">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="icon-post" viewBox="0 0 16 16">
+                                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                                      </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="details-card">
+                            <p class="name-card"><%= pet.firstname %></p>
+                            <div class="date-location-card">
+                                <p class="date-card"><%= pet.breed %></p>
+                                <p class="location-card"><%= pet.age %></p>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            </section>
+        </div>
+        <div class="my-profile">
+            <div style="border-bottom: 2px solid orange; margin-bottom: 5vh;"></div>   
+            <a class="new-post-form" href="/form-ad">
+                <div>
+                    <h2>Click here to publish a new post</h2>         
+                </div>
+            </a>
+            <section class="posts-profile">
+
+                <% posts.forEach( post => { %>
+                    <div class="post-container">
+                        <div class="pic-post" style="background-image: url('<%= post.picture %>');">
+                            <% if(post.status) { %>
+                                <span><%= post.status %></span>
+                            <% } %>
+                            <div style="display: flex; align-items: center; justify-content: space-between; width: 95%;">
+                                <p><%= post.title%></p>
+                                <div>
+                                    <a >
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="icon-post" viewBox="0 0 16 16">
+                                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                          </svg>
+                                    </a>
+                                    <a href="/delete-post/<%= post._id%>">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="icon-post" viewBox="0 0 16 16">
+                                            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                                          </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-post">
+                            <div class="buttons-info-post">
+                                <p><%= post.date %></p>
+                                <p><%= post.location %></p>
+                            </div>
+                            <p style="margin-top: 2vmin;"><%= post.features %></p>
+                            <p><b>Contact me in:</b> <%= post.number%></p>
+                        </div>
+                    </div>
+                <% }) %>
+            </section>
+        </div>
+
+    </section>
+
+<%- include('partials/footer.ejs')  %>

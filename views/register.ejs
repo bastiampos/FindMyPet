@@ -1,0 +1,42 @@
+<%- include('partials/head.ejs')  %>
+<%- include('partials/header.ejs')  %>
+    <main class="register-main">
+        <section 
+            style="background-image: url('https://cdn.dribbble.com/users/3960463/screenshots/16357000/media/582d64fc9ae5ac94cf1aeceb7de0537a.jpg?compress=1&resize=1200x900'); width: 50%; background-size: cover;">
+        </section>
+        <section class="register">
+            <h2>Sign Up</h2>
+            <p>Fill your data</p>
+            <form action="/user/signup" method="POST">
+                <div>
+                    <label for="firstname">First Name</label>
+                    <input type="text" name="firstname" id="firstname" placeholder="Your first name"/>
+                </div>
+                <div>
+                    <label for="lastname">Last Name</label>
+                    <input type="text" name="lastname" id="lastname" placeholder="Your last name"/>
+                </div>
+                <div>
+                    <label for="picture">Picture</label>
+                    <input type="text" name="picture" id="picture" placeholder="Put an url"/>
+                </div>                
+
+                <div>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="4+ characters"/>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="example@email.com"/>
+                </div>
+
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="4+ characters"/>
+                </div>
+                <input type="submit" value="Sign Up"/>
+            </form>
+        </section>
+
+
+<%- include('partials/footer.ejs')  %>
